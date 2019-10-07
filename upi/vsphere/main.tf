@@ -63,7 +63,7 @@ module "control_plane" {
   ip_addresses     = ["${var.control_plane_ips}"]
   machine_cidr     = "${var.machine_cidr}"
   memory           = "16384"
-  num_cpu          = "4"
+  num_cpu          = "${var.master_num_cpus}"
 }
 
 module "compute" {
@@ -84,7 +84,7 @@ module "compute" {
   ip_addresses     = ["${var.compute_ips}"]
   machine_cidr     = "${var.machine_cidr}"
   memory           = "8192"
-  num_cpu          = "4"
+  num_cpu          = "${var.worker_num_cpus}"
 }
 
 module "dns" {

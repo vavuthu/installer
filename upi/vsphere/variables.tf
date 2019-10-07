@@ -114,6 +114,11 @@ variable "control_plane_ips" {
   default = []
 }
 
+variable "master_num_cpus" {
+  type = "string"
+  default = "4"
+}
+
 //////////
 // Compute machine variables
 //////////
@@ -130,4 +135,9 @@ variable "compute_ignition" {
 variable "compute_ips" {
   type    = "list"
   default = []
+}
+
+variable "worker_num_cpus" {
+  type = "string"
+  default = "4"
 }
